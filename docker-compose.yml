@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+  virtuoso_db:
+    image: pkleef/virtuoso-opensource-7
+    volumes:
+      - ./data:/database/data
+      - ./scripts:/opt/virtuoso-opensource/initdb.d
+    environment:
+      - DBA_PASSWORD=dba
+    ports:
+      - "1111:1111"
+      - "8890:8890"
